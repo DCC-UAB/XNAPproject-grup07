@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/L30CyvB9)
-# XNAP-Project title (replace it by the title of your project)
+# XNAP-Painting Processing 
 Write here a short summary about your project. The text must include a short introduction and the targeted goals
 
 ## Code structure
@@ -21,8 +21,11 @@ python main.py
 
 
 ## Contributors
-Write here the name and UAB mail of the group members
+- Marta Monsó Cadena, marta.monso@autonoma.cat
+- Mercè Li de la Torre Prats, mercelidela.torre@autonoma.cat
+- Daria Andreea Buiuc Balanescu, dariaandreea.buiuc@autonoma.cat
+- Ariadna Lucero Abad, ariadna.lucero@autonoma.cat
 
 Xarxes Neuronals i Aprenentatge Profund
-Grau de __Write here the name of your estudies (Artificial Intelligence, Data Engineering or Computational Mathematics & Data analyitics)__, 
+Grau de Enginyeria de Dades, 
 UAB, 2023
