@@ -19,6 +19,8 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 ### Results
 - Data Augmentation (Image flip): We have done Data Augmentation with all the folder "train_1" which includes 11025 images. In this first part we just flip horizontal, vertical and horizontal and vertical, creating then 3 new images for every image on the train folder. Except for "../../train_1\121.jpg" that is is not the same format and it can't read it, we did it for all the others. Then we have a new folder "train_1_flip" with all the new train containing 33072 images. If we use all the images with the model, we have a total of 44097 images for testing at the moment. The next step for this part is to try with the models, which one has better Accuracy and study the different cases.
 
+- Data Augmentation ( Image Rotate) : We have done Data Augmentation with all the folder "train_1" which includes 11025 images. We have rotate them of 45 degrees counterclockwise and saved the rotated version of the image in a new folder called "train_1_rotate". In this way, we have twice the initial image .
+
 ## Week 2
 
 
