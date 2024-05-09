@@ -12,7 +12,7 @@ We are based on a starting point, which works with Keras.
 ### Planning
 We divided our target goals in 4 mini-goals so each one of us could improve one:
 - Data Augmentation (Image flip) -> Ariadna Lucero
-- Data Augmentation (Image Rotation) -> Daria 
+- Data Augmentation (Image Rotation) -> Daria Buiuc
 - Optimizer (RMSProp) -> Marta Monsó
 - Optimizer (SGD) -> Marcè De la Torre
 

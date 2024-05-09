@@ -1,10 +1,20 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/L30CyvB9)
 
 # XNAP-Painting Processing 
-Write here a short summary about your project. The text must include a short introduction and the targeted goals
+In this project we are working with a set of images representing paintings and we have some information related to this artisitic works. There are many goals we can try to achieve, such as detecting the painter or the sytle, we can even predit two characteristics at the same time. 
 
 ## Code structure
-You must create as many folders as you consider. You can use the proposed structure or replace it by the one in the base code that you use as starting point. Do not forget to add Markdown files as needed to explain well the code and how to use it.
+We will have the data outside the repository because of the size. Otherwise, this is our relevant structure:
+- our_code
+    - data_augmentation_flip.ipynb, where is done the process of the data augmentation for the data
+    - starting_point_modified_RMSprop.ipynb
+    - starting_point_modified.ipynb
+    - starting_point.ipynb
+- main.py
+- test.py
+- train.py
+- README.md, where is the presentation and explanation about the repository
+- QUESTIONS.md, where we will update al least every week about the process of the tasks in order to answer our initial questions.
 
 ## Example Code
 The given code is a simple CNN example training on the MNIST dataset. It shows how to set up the [Weights & Biases](https://wandb.ai/site)  package to monitor how your network is learning, or not.
