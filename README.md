@@ -25,7 +25,6 @@ More specifically, after data processing and artist selection for the training s
 
 
 
-
 ## Contributors
 - Marta Monsó Cadena, marta.monso@autonoma.cat
 - Mercè Li de la Torre Prats, mercelidela.torre@autonoma.cat
