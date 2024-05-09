@@ -18,6 +18,11 @@ To run the example code:
 ```
 python main.py
 ```
+## Starting point
+The code we've taken as our 'Starting Point' for the project focuses on artist classification based on images of their paintings. Specifically, it employs a ResNet50 neural network with transfer learning to identify one of the 38 artists who have over 200 of their paintings in the dataset being used. The code includes library imports, data preprocessing, artist selection, model setup and training, accuracy evaluation, prediction, and prediction accuracy calculation.
+
+More specifically, after data processing and artist selection for the training set, it utilizes the ResNet50 model for artist classification and adds additional layers to tailor the model to the number of artists being used. The Adam optimizer is used, and 'categorical_crossentropy' serves as the loss function. After training the model over multiple epochs, it evaluates the model using test data with graphs analyzing accuracy and loss. Finally, it predicts artist labels for test images and calculates prediction accuracy for trained and untrained artists.
+
 
 
 
