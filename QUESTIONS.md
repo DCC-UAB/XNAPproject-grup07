@@ -31,6 +31,41 @@ If we look the loss graphic, we can say that with SGD learns slower and worse th
 
 
 ## Week 2
+### Target goals
+- Constructing a mosaic of photos of the same artist. 
+- Merging the codes of the first week: 
+- - have graphics with the three optimizers together 
+- - apply data augmentation to the different optimizers.
+
+### Planning
+- Mosaics -> Mercè De la Torre
+- Unifying optimizers -> Marta Monsó
+
+
+### Results
+- Mosaics: We've tried the compositions of different images with a very reduced dataset, exactly with 631 files for train and 391 samples for the test. The accuracies using the TEST directory are very low, but we expect to increase them using much more samples:
+- - Adam: test accuracy on new images for TRAINED artists = 0.5063
+- - Adam: test accuracy on new images for UNEXPECTED artitsts =  0
+
+- - SGD: test accuracy on new images for TRAINED artists = 0.4561
+- - SGD: test accuracy on new images for UNEXPECTED artitsts =  0
+
+So, we've created a directory named 'compositions' to keep the mosaics, for now we have the ones resulting of the Adam's predictions with the reduced dataset. For instance, paints by Pablo Picasso would be like:
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/7b87d343c7eb66e18fad638b09197006617e3c05/compostions/predictions_631_images/composition_Pablo%20Picasso.png)
+
+Or John Singer Sargent, where we can see some simalirities between the works. Nevertheless, the last picture is quite different from others.
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/7b87d343c7eb66e18fad638b09197006617e3c05/compostions/predictions_631_images/composition_John%20Singer%20Sargent.png)
+
 
 
 ## Week 3
+### Target goals
+- 
+
+### Planning
+
+
+### Results
+
+
+
