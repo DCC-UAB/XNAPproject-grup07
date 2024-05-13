@@ -1,20 +1,15 @@
-py 
-
 # Step 1: Count occurrences of each artist
 artist_counts = df['artist'].value_counts()
 
-# Step 2: Calculate percentage of each artist's representation in the dataset
-# total_rows = len(df)
-# artist_percentages = artist_counts / total_rows
-
-# Step 3: Filter the dataset to keep only new_filenames whose corresponding artists represent more than 50%
-artists_above_500 = artist_percentages[artist_counts > 499].index
-filtered_df = df[df['artist'].isin(artists_above_500)]
+# Step 3: Filter the dataset to keep only new_filenames
+# 500 ÉS MASA POQUES IMATGES, potser millor fer 100
+artists_above_99 = artist_counts[artist_counts >= 99].index
+filtered_df = df[df['artist'].isin(artists_above_99)]
 
 artist_counts
 
 #%%
-
+# AQUÍ SE'T CREARÀ UNA NOVA CARPETA ON MOUREM ELS FITXERS DELS ARTISTES CORRESPONENTS
 # Keep files in directories of the filtered artists
 import shutil
 import os
@@ -34,7 +29,7 @@ for index, row in filtered_df.iterrows():
     new_filename = row['new_filename']
     
     # Determine the subdirectory of the file (train_1 or test)
-    # TORNAR A EXECUTAR PER TEST
+    # TORNAR A EXECUTAR PER TEST <--------------------------------------------
     source_subdirectory = "train_1" 
     # source_subdirectory = "test"
 
