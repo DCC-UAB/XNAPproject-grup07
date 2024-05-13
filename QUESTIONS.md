@@ -21,7 +21,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
 - Data Augmentation (Image Rotate): We have done Data Augmentation with all the folder "train_1" which includes 11025 images. We have rotate them of 45 degrees counterclockwise and saved the rotated version of the image in a new folder called "train_1_rotate". In this way, we have twice the initial image .
 
-- Optimizer (SGD): By applying the optimizer SGD instead of Adam we have the following evolution of accuracy:
+- Optimizer (SGD): By applying the optimizer SGD instead of Adam with around 80000 images, we have the following evolution of accuracy:
 ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/ebd4ecb6b481321ae315b75d05784402dd550ecc/ouput/model_accuracy.png)
 
 In both models we have overfitting, in SGD we reduce the accuracies' gap. Nevertheless, we obtain worse accuracies with the new optimizer. So, we wouldn't consider it.
