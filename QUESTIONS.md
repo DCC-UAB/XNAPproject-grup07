@@ -31,6 +31,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
     ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/ebd4ecb6b481321ae315b75d05784402dd550ecc/ouput/model_loss.png)
 
+- Optimizer (RMSprop): After applaying the Adam and SGD optimezers, we also tried to apply the optimizer RMSprop with around 80000 images, as a result we have the following evolution of accuracy:
 
 ## Week 2
 ### Target goals
