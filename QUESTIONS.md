@@ -36,6 +36,14 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
 - Optimizer (RMSprop): After applaying the Adam and SGD optimezers, we also tried to apply the optimizer RMSprop with around 80000 images, as a result we have the following evolution of accuracy:
 
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/f8232212d00e00508efd644bc216e4bf4f5522a1/ouput/model_accuracy_adam_sgd_rsmprop.png) 
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/f8232212d00e00508efd644bc216e4bf4f5522a1/ouput/model_loss_adam_sgd_rsmprop.png)
+
+
+
+
 ## Week 2
 ### Target goals
 - Constructing a mosaic of photos of the same artist. 
