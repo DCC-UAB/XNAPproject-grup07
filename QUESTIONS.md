@@ -36,6 +36,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 ## Week 2
 ### Target goals
 - Constructing a mosaic of photos of the same artist. 
+- Select the final train we want to use.
 - Merging the codes of the first week: 
     - have graphics with the three optimizers together 
     - apply data augmentation to the different optimizers.
@@ -61,6 +62,10 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
     ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/7b87d343c7eb66e18fad638b09197006617e3c05/compostions/predictions_631_images/composition_John%20Singer%20Sargent.png)
 
+- Final train: We had a problem with the capacity and the volume of our train set, so we have implemented a code where we select the 10 artist which have the most paintings on the original train. Once we know the artists, we select all their paintings (from the 9 folders of train) and we save only this ones. 
+    Now that we have this patings, we will do Data Augmentation we did last week so we'll have much more paintings on our training set.
+    
+    And finally we have to confirm that the volume of this new training set is correct for our situation.
 
 
 ## Week 3
