@@ -41,6 +41,8 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
     ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/f8232212d00e00508efd644bc216e4bf4f5522a1/ouput/model_loss_adam_sgd_rsmprop.png)
 
+    
+    In terms of accuracy, Adam and RMSprop seem to be the most effective optimizers, with similar performance considering the values of accuracy and loss. However, in the end, the results obtained with the Adam optimizer are slightly better. As we have seen previosly,SGD optimizer appears to lag behind compared to the other two, as it has significantly lower performance in terms of accuracy and loss.
 
 
 
@@ -55,6 +57,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 ### Planning
 - Mosaics -> Mercè De la Torre
 - Unifying optimizers -> Marta Monsó
+- Selection of our final train -> Ariadna
 
 
 ### Results
