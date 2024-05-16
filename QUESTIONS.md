@@ -59,6 +59,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 - Unifying optimizers -> Marta Monsó
 - Selection of our final train -> Ariadna
 - Try deeper models not used, Resnet 18 and Resnet101 -> Daria
+- Applying wandb
 
 
 ### Results
@@ -81,6 +82,10 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
     Now that we have this patings, we will do Data Augmentation we did last week so we'll have much more paintings on our training set.
     
     And finally we have to confirm that the volume of this new training set is correct for our situation.
+
+- Trying wandb: With wandb we can create graphics and save them in a workspace in wandb. So, we have interactive graphics and "play" with layers of different executions. We've tried it with Adam with 631 images in training set. An exemple of the overwiew: 
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/wandb_dashboard_631_images.png)
 
 
 ## Week 3
