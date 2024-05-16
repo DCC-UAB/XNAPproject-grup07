@@ -10,11 +10,12 @@ We will have the data outside the repository because of the size. Otherwise, thi
     - starting_point_modified_RMSprop.ipynb
     - starting_point_modified.ipynb
     - starting_point.ipynb
-- main.py
-- test.py
-- train.py
-- README.md, where is the presentation and explanation about the repository
-- QUESTIONS.md, where we will update al least every week about the process of the tasks in order to answer our initial questions.
+- compositions
+    - predictions_631 is a directory where we have the mosaics created from a model trained with a very few photos, 631.
+- output
+    A folder where we keep the output such as the accuracies graphics and data augmentation.
+- README.md, where we detail the presentation and the explanation about the repository.
+- QUESTIONS.md, where we will update every week about the process of the tasks in order to answer our initial questions.
 
 ## Starting point
 The code we've taken as our 'Starting Point' for the project focuses on artist classification based on images of their paintings. Specifically, it employs a ResNet50 neural network with transfer learning to identify one of the 38 artists who have over 200 of their paintings in the dataset being used. The code includes library imports, data preprocessing, artist selection, model setup and training, accuracy evaluation, prediction, and prediction accuracy calculation.

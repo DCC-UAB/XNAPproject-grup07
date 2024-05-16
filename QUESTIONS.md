@@ -58,6 +58,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 - Mosaics -> Mercè De la Torre
 - Unifying optimizers -> Marta Monsó
 - Selection of our final train -> Ariadna
+- Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 
 
 ### Results
