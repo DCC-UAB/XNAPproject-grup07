@@ -22,7 +22,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 <p align="center">
     <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_flip0.jpg" alt="Alt text" width="200"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_flip1.jpg" alt="Alt text" width="200"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_flip2.jpg" alt="Alt text" width="200"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_flip3.jpg" alt="Alt text" width="200"/> </div>
 
-- Data Augmentation (Image Rotate): We have done Data Augmentation with all the folder "train_1" which includes 11025 images. We have rotate them of 45 degrees counterclockwise and saved the rotated version of the image in a new folder called "train_1_rotate". In this way, we have twice the initial image .
+- Data Augmentation (Image Rotate): We have done Data Augmentation with all the folder "train_1" which includes 11025 images. We have rotated them of 45, 90 and 180 degrees counterclockwise and saved the rotated version of the image in a new folder called "train_1_rotate". In this way, we have four times the initial number of images .
 
 - Optimizer (SGD): By applying the optimizer SGD instead of Adam with around 80000 images, we have the following evolution of accuracy:
 
