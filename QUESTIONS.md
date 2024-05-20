@@ -1,7 +1,7 @@
 # XNAP-Painting Processing 
 In this project we are working with a set of images representing paintings and we have some information related to this artisitic works. There are many goals we can try to achieve, such as detecting the painter or the sytle, we can even predit two characteristics at the same time. 
 
-We are based on a starting point, which works with Keras.
+We are based on a starting point, which works with Keras and works with pretrained weights of Imagenet.
 
 ## Week 1
 ### Target goals
@@ -90,15 +90,21 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 ## Week 3
 ### Target goals
 - Locating in the training dataset what can give us overfitting and see if it's unbalanced.
-- Improving our model and try finetuning.
-- Trying  different models.
+- Improving our model.
+- Trying different models.
 
 ### Planning
 - Balancing our dataset -> Ariadna
 - Improving our model -> Marta, Mercè and Daria
+    - Finetuning the best optimizer -> Mercè
 - Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 
 ### Results
+- Finetuning the best optimizer, which is Adam.
+    - Freezing all layers.
+    - Unfreezing the last layer.
+    - Unfreezing all layers.
+    We can see the best practice for our images in the graphic below.
 
 
 
