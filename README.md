@@ -6,14 +6,15 @@ In this project we are working with a set of images representing paintings and w
 ## Code structure
 We will have the data outside the repository because of the size. Otherwise, this is our relevant structure:
 - our_code
-    - data_augmentation_flip.ipynb, where is done the process of the data augmentation for the data
-    - starting_point_modified_RMSprop.ipynb
-    - starting_point_modified.ipynb
+    - data_augmentation_flip.ipynb, where is done the process of the data augmentation for the data.
+    - starting_point_modified.ipynb, code with methods are merged.
     - starting_point.ipynb
 - compositions
     - predictions_631 is a directory where we have the mosaics created from a model trained with a very few photos, 631.
-- output
+- output \
     A folder where we keep the output such as the accuracies graphics and data augmentation.
+- wandb \
+      We keep images related to wandb. Our project is named [xarxes_projecte](https://wandb.ai/xarxes_projecte?shareProfileType=copy).
 - README.md, where we detail the presentation and the explanation about the repository.
 - QUESTIONS.md, where we will update every week about the process of the tasks in order to answer our initial questions.
 
