@@ -58,7 +58,6 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 - Mosaics -> Mercè De la Torre
 - Unifying optimizers -> Marta Monsó
 - Selection of our final train -> Ariadna
-- Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 - Applying wandb
 
 
@@ -90,10 +89,14 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
 ## Week 3
 ### Target goals
-- 
+- Locating in the training dataset what can give us overfitting and see if it's unbalanced.
+- Improving our model and try finetuning.
+- Trying  different models.
 
 ### Planning
-
+- Balancing our dataset -> Ariadna
+- Improving our model -> Marta, Mercè and Daria
+- Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 
 ### Results
 
