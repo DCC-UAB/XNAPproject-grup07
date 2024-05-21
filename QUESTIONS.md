@@ -102,9 +102,9 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 ### Results
 - Training our model with 2600 images and augmenting the training set with flipped images, what makes 10400 works to train with. And using 10 artists, we obtain the accuracies and losses graphics below:
     
-    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_accuracy_3opt_10400im_10art.png)
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/62d1a2792c7dc5e8f0bdce61a8c9b3a4c62acc78/ouput/model_accuracy_3opt_10400im_10art.png)
 
-    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_loss_finetuning_10400im_10art.png)
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/62d1a2792c7dc5e8f0bdce61a8c9b3a4c62acc78/ouput/model_loss_3opt_10400im_10art.png)
 
     We still have a big overfitting. Nevertheless, we can extract the "best" optimizer: Adam. We could've said RMSProp, but the Adam's tendency of the test accuracy is upwards, whether the RMSProp increases the overfitting.
 
