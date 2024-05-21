@@ -100,11 +100,34 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 - Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 
 ### Results
+- Training our model with 2600 images and augmenting the training set with flipped images, what makes 10400 works to train with. And using 10 artists, we obtain the accuracies and losses graphics below:
+    
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_accuracy_3opt_10400im_10art.png)
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_loss_finetuning_10400im_10art.png)
+
+    We still have a big overfitting. Nevertheless, we can extract the "best" optimizer: Adam. We could've said RMSProp, but the Adam's tendency of the test accuracy is upwards, whether the RMSProp increases the overfitting.
+
+    If we look up the accuracies, Adam optimizer works better:
+    - **Adam: test accuracy on new images for TRAINED artists 209 / 335 = 0.6239**
+    - SGD: test accuracy on new images for TRAINED artists 178 / 335 = 0.5313
+    - RMSProp: test accuracy on new images for TRAINED artists 189 / 335 = 0.5642
+
 - Finetuning the best optimizer, which is Adam.
     - Freezing all layers.
     - Unfreezing the last layer.
     - Unfreezing all layers.
     We can see the best practice for our images in the graphic below.
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_accuracy_finetuning_10400im_10art.png)
+
+    There's a lot of overfitting in the three ways, but in unfreezing one layer, the last layer, we obtain better results, specially in the test.
+
+    Now we compare the losses:
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_loss_finetuning_10400im_10art.png)
+
+    Now we can't say that unfreezing one layer is the best option, and now we would consider frozing all the layers.
 
 
 
