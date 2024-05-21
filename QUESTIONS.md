@@ -113,21 +113,40 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
     - SGD: test accuracy on new images for TRAINED artists 178 / 335 = 0.5313
     - RMSProp: test accuracy on new images for TRAINED artists 189 / 335 = 0.5642
 
+- Training our model with 13000 images (including rotation and flip) in 20 epochs instead of 5. And using 10 artists, we obtain the accuracies and losses graphics below, extracted fromb wandb:
+
+    First we show our dashboard:
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/dashboard_13000im_10art.png)
+
+    And now we can see the comparasion between training and test.
+    
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/model_accuracies_13000im_10art.png)
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/model_loss_1300im_10art.png)
+
+    We obtain slightly better results. However, we still have a big overfitting. 
+
+    If we look up the accuracies, Adam remains being the optimizer that works better:
+    - **Adam: test accuracy on new images for TRAINED artists 233 / 335 = 0.6955**
+    - SGD: test accuracy on new images for TRAINED artists 227 / 335 = 0.6776
+    - RMSProp: test accuracy on new images for TRAINED artists 231 / 335 = 0.6896
+
 - Finetuning the best optimizer, which is Adam.
     - Freezing all layers.
     - Unfreezing the last layer.
     - Unfreezing all layers.
     We can see the best practice for our images in the graphic below.
 
-    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_accuracy_finetuning_10400im_10art.png)
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/model_accuracies_finetuning_13000im_10art.png)
 
     There's a lot of overfitting in the three ways, but in unfreezing one layer, the last layer, we obtain better results, specially in the test.
 
     Now we compare the losses:
 
-    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/c24641596adf3fdbdaf9e3a731bddcb4d384454e/ouput/model_loss_finetuning_10400im_10art.png)
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/model_losses_finetuning_13000im_10art.png)
 
-    Now we can't say that unfreezing one layer is the best option, and now we would consider frozing all the layers.
+    Now we confirm that we have less loss when unfreezing the last layer.
 
 
 
