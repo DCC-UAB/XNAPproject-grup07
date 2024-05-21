@@ -132,6 +132,16 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
     - SGD: test accuracy on new images for TRAINED artists 227 / 335 = 0.6776
     - RMSProp: test accuracy on new images for TRAINED artists 231 / 335 = 0.6896
 
+    So, predicting with Adam, we've created mosaics for predicted values of each piece of art. And also, we've composed the mosaic that we should've obtained.
+
+    Mosaic with predicted artists:
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/a3fc250e2ff2da10e97120fea8e5e5da436e57bf/compostions/predictions_13000_images/composition_Gustave%20Dore.png)
+
+    Mosaic with real value:
+
+    ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/a3fc250e2ff2da10e97120fea8e5e5da436e57bf/compostions/real_values_13000_images/composition_Gustave%20Dore.png)
+
 - Finetuning the best optimizer, which is Adam.
     - Freezing all layers.
     - Unfreezing the last layer.
