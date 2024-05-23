@@ -95,11 +95,32 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
 ### Planning
 - Balancing our dataset -> Ariadna
+- Create augmentation in Keras -> Marta
 - Improving our model -> Marta, Mercè and Daria
     - Finetuning the best optimizer -> Mercè
 - Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 
 ### Results
+- Until now, we had been working with manually implemented rotation and flip augmentations, but we have seen that we need to use ImageDataGenerator to create augmentations for the images in the training set using Keras. We have added the data augmentation part in the definition of train_data_gen within the setup_generators_with_augmentation function. The augmentations include rotations, shifts, shears, zooms, and horizontal flips. This configuration has been specifically applied to the training set in order to improve the robustness of the model.
+
+We run the code using the train set that contains the images of the 10 artists who have painted the most paintings in the original train set, performing the augmentation part and using the three different optimizers: adam, rmsprop, and sgd. We have executed it using wandb.
+
+
+ADAM
+
+ ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/augmentation_adam.jpg)
+
+RMSPROP
+
+ ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/augmentation_rms.jpg)
+
+SGD
+
+ ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/augmentation_sgd.jpg)
+
+In the results of the three optimizers, we can observe the same trend, where a good accuracy is achieved for the training set but for the validation set, the accuracy remains low, indicating that we have overfitting to our data.
+
+
 - Training our model with 2600 images and augmenting the training set with flipped images, what makes 10400 works to train with. And using 10 artists, we obtain the accuracies and losses graphics below:
     
     ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/62d1a2792c7dc5e8f0bdce61a8c9b3a4c62acc78/ouput/model_accuracy_3opt_10400im_10art.png)
