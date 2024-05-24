@@ -186,15 +186,17 @@ In the results of the three optimizers, we can observe the same trend, where a g
 
 ## Week 4
 ### Target goals
-
+We have decided that working with 30 artists doesn't give us the results we expected. So we will now work with 10 artists again. And if we don't improve the model, at least we will find the problems and try to fix them.
+- We want to do a research for overlapping and identify if we have this problem.
+- Try to freeze by layers and try different combinations.
+- Add relu and also try with model Resnet18.
+- Weights from the different classes and observe the changes.
+- Do a correct distribution for the classes in train and validation set.
+- Compare the results from accuracy into different classes (artists).
 
 ### Planning
+- Get the 10 artists with the most pictures -> Ariadna
 
-Treballem amb 10 classes:
-
-- Comparar els resultats d'accuracy entre les diferents classes.
-- Distribució correcta de les classes en el train/validation.
-- Pesos de les classes.
-- Afegir capa d'activació  i provar amb model Resnet18.
-- Descongelar per blocs i anar provant.
-- Overlaping. 
+### Results
+In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
+- At the moment, this first 10 artists will be: Camille Pissarro, Vincent van Gogh, Theophile Steinlen, Pierre-Auguste Renoir, Boris Kustodiev, Pyotr Konchalovsky, Gustave Dore, Edgar Degas, Camille Corot, Eugene Boudin.
