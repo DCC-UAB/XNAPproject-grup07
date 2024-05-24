@@ -98,6 +98,7 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 - Create augmentation in Keras -> Marta
 - Improving our model -> Marta, Mercè and Daria
     - Finetuning the best optimizer -> Mercè
+    - Dropout i regularització --> Marta
 - Try deeper models not used, Resnet 18 and Resnet101 -> Daria
 
 ### Results
@@ -117,6 +118,8 @@ RMSPROP
 SGD
 
  ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/augmentation_sgd.jpg)
+
+
 
 In the results of the three optimizers, we can observe the same trend, where a good accuracy is achieved for the training set but for the validation set, the accuracy remains low, indicating that we have overfitting to our data.
 
@@ -181,3 +184,17 @@ In the results of the three optimizers, we can observe the same trend, where a g
 
 
 
+## Week 4
+### Target goals
+
+
+### Planning
+
+Treballem amb 10 classes:
+
+- Comparar els resultats d'accuracy entre les diferents classes.
+- Distribució correcta de les classes en el train/validation.
+- Pesos de les classes.
+- Afegir capa d'activació  i provar amb model Resnet18.
+- Descongelar per blocs i anar provant.
+- Overlaping. 
