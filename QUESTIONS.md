@@ -196,7 +196,12 @@ We have decided that working with 30 artists doesn't give us the results we expe
 
 ### Planning
 - Get the 10 artists with the most pictures -> Ariadna
+- Compare accuracy from classes -> Ariadna
 
 ### Results
 In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
 - At the moment, this first 10 artists will be: Camille Pissarro, Vincent van Gogh, Theophile Steinlen, Pierre-Auguste Renoir, Boris Kustodiev, Pyotr Konchalovsky, Gustave Dore, Edgar Degas, Camille Corot, Eugene Boudin.
+
+resnet18 ....
+
+While we were implementing resnet18 to compare the results. We were also trying to compare the accuracy between 10 classes we were classifing our dataset. We have found different errors and see the accuracy for only one artist is giving difficulties.
