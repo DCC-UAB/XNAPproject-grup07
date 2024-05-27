@@ -207,6 +207,16 @@ We have decided that working with 30 artists doesn't give us the results we expe
 In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
 - At the moment, this first 10 artists will be: Camille Pissarro, Vincent van Gogh, Theophile Steinlen, Pierre-Auguste Renoir, Boris Kustodiev, Pyotr Konchalovsky, Gustave Dore, Edgar Degas, Camille Corot, Eugene Boudin.
 
-resnet18 ....
+resnet18 .... HERE ADD UPDATES
 
 While we were implementing resnet18 to compare the results. We were also trying to compare the accuracy between 10 classes we were classifing our dataset. We have found different errors and see the accuracy for only one artist is giving difficulties.
+We have seen that trying to do it with the test is not possible because we have images that are not classified and that we can't compare. So we will try to do it with the validation images. 
+
+Although before we are going to test if using sparse categorical crossentropy works better for our model. After doing the testing, we compare the results with the last categorical_crossentropy and we see that this had a better running. (adam50_sparse_categorical_crossentropy_10_artists - orange)
+
+Another thing we can try is modifying the batch size and trying a smaller one, to see if this give us a better classification. And this is the result when we change it to: BATCH_SIZE = 30 and TEST_BATCH_SIZE = 35. But we conclude that it works worse than with the batch size original (INCLUDE BATCH SIZE). (categorical_crossentropy_less_batch_size - cian)
+
+Otherwise we also tried with another even smaller: BATCH_SIZE = 15 and TEST_BATCH_SIZE = 20. Where we can see that is working better than the last one, but not as good as the original we where using. (
+categorical_crossentropy_small_batch_size - purple)
+
+AFEGIR IMATGE: 
