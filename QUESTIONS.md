@@ -123,6 +123,11 @@ SGD
 
 In the results of the three optimizers, we can observe the same trend, where a good accuracy is achieved for the training set but for the validation set, the accuracy remains low, indicating that we have overfitting to our data.
 
+- To try to reduce overfitting, we added a dropout layer to the model configured with a rate of 0.4 and L2 regularization with a factor of 0.01. However, we can see that the trend has not changed, and we still have overfitting.
+
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dropout.jpg)
+
 
 - Training our model with 2600 images and augmenting the training set with flipped images, what makes 10400 works to train with. And using 10 artists, we obtain the accuracies and losses graphics below:
     
