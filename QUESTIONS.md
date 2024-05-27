@@ -24,6 +24,9 @@ We divided our target goals in 4 mini-goals so each one of us could improve one:
 
 - Data Augmentation (Image Rotate): We have done Data Augmentation with all the folder "train_1" which includes 11025 images. We have rotated them of 45, 90 and 180 degrees counterclockwise and saved the rotated version of the image in a new folder called "train_1_rotate". In this way, we have four times the initial number of images .
 
+<p align="center">
+    <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_rotate_180.jpg" alt="Alt text" width="200"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_rotate_45.jpg" alt="Alt text" width="200"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/dat_aug_rotate_90.jpg" alt="Alt text" width="200"/> </div>
+
 - Optimizer (SGD): By applying the optimizer SGD instead of Adam with around 80000 images, we have the following evolution of accuracy:
 
     ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/ebd4ecb6b481321ae315b75d05784402dd550ecc/ouput/model_accuracy.png)
@@ -214,9 +217,9 @@ We have seen that trying to do it with the test is not possible because we have 
 
 Although before we are going to test if using sparse categorical crossentropy works better for our model. After doing the testing, we compare the results with the last categorical_crossentropy and we see that this had a better running. (adam50_sparse_categorical_crossentropy_10_artists - orange)
 
-Another thing we can try is modifying the batch size and trying a smaller one, to see if this give us a better classification. And this is the result when we change it to: BATCH_SIZE = 30 and TEST_BATCH_SIZE = 35. But we conclude that it works worse than with the batch size original (INCLUDE BATCH SIZE). (categorical_crossentropy_less_batch_size - cian)
+Another thing we can try is modifying the batch size and trying a smaller one, to see if this give us a better classification. And this is the result when we change it to: BATCH_SIZE = 30 and TEST_BATCH_SIZE = 35. But we conclude that it works worse than with the batch size original (BATCH_SIZE: 58 and TEST_BATCH_SIZE: 64). (categorical_crossentropy_less_batch_size - cian)
 
-Otherwise we also tried with another even smaller: BATCH_SIZE = 15 and TEST_BATCH_SIZE = 20. Where we can see that is working better than the last one, but not as good as the original we where using. (
-categorical_crossentropy_small_batch_size - purple)
+Otherwise we also tried with another even smaller: BATCH_SIZE = 15 and TEST_BATCH_SIZE = 20. Where we can see that is working better than the last one, but not as good as the original we where using. (categorical_crossentropy_small_batch_size - purple)
 
-AFEGIR IMATGE: 
+<p align="center">
+    <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/acc_batch_sparse.png" alt="Alt text" width="600"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/loss_batch_sparse.png" alt="Alt text" width="600"/> </div>
