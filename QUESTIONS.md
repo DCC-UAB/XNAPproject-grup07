@@ -210,7 +210,12 @@ We have decided that working with 30 artists doesn't give us the results we expe
 In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
 - At the moment, this first 10 artists will be: Camille Pissarro, Vincent van Gogh, Theophile Steinlen, Pierre-Auguste Renoir, Boris Kustodiev, Pyotr Konchalovsky, Gustave Dore, Edgar Degas, Camille Corot, Eugene Boudin.
 
-resnet18 .... HERE ADD UPDATES
+In keras, ResNet18 doesn't exist, so we've implemented a function defined in a notebook in [Kaggle](https://www.kaggle.com/code/songrise/implementing-resnet-18-using-keras). We've trained the model with dropout and data augmentation. If we look the accuracy curve and losse's, we can afirm we don't obtain a better method. 
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/resnet18_acc.png)
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/resnet18_loss.png)
+
+So, we decide to focus on **ResNet50**.
 
 While we were implementing resnet18 to compare the results. We were also trying to compare the accuracy between 10 classes we were classifing our dataset. We have found different errors and see the accuracy for only one artist is giving difficulties.
 We have seen that trying to do it with the test is not possible because we have images that are not classified and that we can't compare. So we will try to do it with the validation images. 
@@ -223,3 +228,31 @@ Otherwise we also tried with another even smaller: BATCH_SIZE = 15 and TEST_BATC
 
 <p align="center">
     <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/acc_batch_sparse.png" alt="Alt text" width="600"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/loss_batch_sparse.png" alt="Alt text" width="600"/> </div>
+
+
+Another big mistake we has was that we were splitting train/val in a random way. So, to stratify by artist the two resulting dataframes we implement:
+```
+    train_df, valid_df = train_test_split(
+            train_dataframe,
+            test_size=val_split,
+            stratify=train_dataframe['artist'],
+            random_state=my_seed
+        )
+```
+
+
+
+Also, we've tried to apply an adaptative learning rate, so if the validation accuracy doesn't improve, the learning rate is reduced by a factor (0.1). With that, we allow the model to make  more precise adjustments, helping to find a deeper local minimum. We've called this function ```AdaptiveLearningRateScheduler``` and when we train the model, we pass this callback.
+The following graphic gives us a good model, having overfitting, but with train and validation accuracies higher. Remember, until know the validation accuracy reached not more than 0.5.
+
+![Alt text]()
+
+As well, the loss_val curve has a better tendency, back then it increased almost linearly.  
+
+![Alt text]()
+
+Now, we look the evolution of the learning rates:
+
+![Alt text]()
+
+
