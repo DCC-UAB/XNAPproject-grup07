@@ -245,14 +245,15 @@ Another big mistake we has was that we were splitting train/val in a random way.
 Also, we've tried to apply an adaptative learning rate, so if the validation accuracy doesn't improve, the learning rate is reduced by a factor (0.1). With that, we allow the model to make  more precise adjustments, helping to find a deeper local minimum. We've called this function ```AdaptiveLearningRateScheduler``` and when we train the model, we pass this callback.
 The following graphic gives us a good model, having overfitting, but with train and validation accuracies higher. Remember, until know the validation accuracy reached not more than 0.5.
 
-![Alt text]()
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/acc_lr_adapt.png)
 
-As well, the loss_val curve has a better tendency, back then it increased almost linearly.  
+As well, the loss_val curve has a better tendency, back then it increased almost linearly. 
 
-![Alt text]()
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/loss_lr_adapt.png)
 
 Now, we look the evolution of the learning rates:
 
-![Alt text]()
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/learning_rate_lr_adapt.png)
 
+We start with a high learning rate: 0.01. And there are 4 times that val_accuracy is lower the previous one, so the learnig rate decreaes from 0.01 to 0.001, and 0.0001, until 1-06, which is the minimum lr.
 
