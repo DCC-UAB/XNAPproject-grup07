@@ -204,12 +204,14 @@ We have decided that working with 30 artists doesn't give us the results we expe
 
 ### Planning
 - Get the 10 artists with the most pictures -> Ariadna
-- Compare accuracy from classes -> Ariadna
+- Compare accuracy from classes -> Daria
 
 ### Results
 In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
 
 - At the moment, this first 10 artists will be: Camille Pissarro, Vincent van Gogh, Theophile Steinlen, Pierre-Auguste Renoir, Boris Kustodiev, Pyotr Konchalovsky, Gustave Dore, Edgar Degas, Camille Corot, Eugene Boudin.
+
+- We included a section to check how accurate the model is for each painter. The results show that the model is better at recognizing artworks by some painters compared to others. For instance, it's good at recognizing paintings by Pyotr Konchalovsky (22.45%) and Theophile Steinlen (13.27%), but not as good for Pierre-Auguste Renoir (4.55%) and Boris Kustodiev (3.96%).  This suggest that the model has difficulty distinguishing the works of some painters compared to others.
 
 #### ResNet18
 In keras, ResNet18 doesn't exist, so we've implemented a function defined in a notebook in [Kaggle](https://www.kaggle.com/code/songrise/implementing-resnet-18-using-keras). We've trained the model with dropout and data augmentation. If we look the accuracy curve and losse's, we can afirm we don't obtain a better method. 
