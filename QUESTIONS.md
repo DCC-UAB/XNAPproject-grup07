@@ -208,8 +208,10 @@ We have decided that working with 30 artists doesn't give us the results we expe
 
 ### Results
 In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
+
 - At the moment, this first 10 artists will be: Camille Pissarro, Vincent van Gogh, Theophile Steinlen, Pierre-Auguste Renoir, Boris Kustodiev, Pyotr Konchalovsky, Gustave Dore, Edgar Degas, Camille Corot, Eugene Boudin.
 
+#### ResNet18
 In keras, ResNet18 doesn't exist, so we've implemented a function defined in a notebook in [Kaggle](https://www.kaggle.com/code/songrise/implementing-resnet-18-using-keras). We've trained the model with dropout and data augmentation. If we look the accuracy curve and losse's, we can afirm we don't obtain a better method. 
 
 ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/resnet18_acc.png)
@@ -217,10 +219,11 @@ In keras, ResNet18 doesn't exist, so we've implemented a function defined in a n
 
 So, we decide to focus on **ResNet50**.
 
+#### Reducing batch size
 While we were implementing resnet18 to compare the results. We were also trying to compare the accuracy between 10 classes we were classifing our dataset. We have found different errors and see the accuracy for only one artist is giving difficulties.
 We have seen that trying to do it with the test is not possible because we have images that are not classified and that we can't compare. So we will try to do it with the validation images. 
 
-Although before we are going to test if using sparse categorical crossentropy works better for our model. After doing the testing, we compare the results with the last categorical_crossentropy and we see that this had a better running. (adam50_sparse_categorical_crossentropy_10_artists - orange)
+Although before we are going to test if we use sparse categorical crossentropy works better for our model. After doing the testing, we compare the results with the last categorical_crossentropy and we see that this had a better running. (adam50_sparse_categorical_crossentropy_10_artists - orange)
 
 Another thing we can try is modifying the batch size and trying a smaller one, to see if this give us a better classification. And this is the result when we change it to: BATCH_SIZE = 30 and TEST_BATCH_SIZE = 35. But we conclude that it works worse than with the batch size original (BATCH_SIZE: 58 and TEST_BATCH_SIZE: 64). (categorical_crossentropy_less_batch_size - cian)
 
@@ -230,6 +233,7 @@ Otherwise we also tried with another even smaller: BATCH_SIZE = 15 and TEST_BATC
     <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/acc_batch_sparse.png" alt="Alt text" width="600"/> <img src="https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/loss_batch_sparse.png" alt="Alt text" width="600"/> </div>
 
 
+#### Stratifying our data
 Another big mistake we has was that we were splitting train/val in a random way. So, to stratify by artist the two resulting dataframes we implement:
 ```
     train_df, valid_df = train_test_split(
@@ -240,8 +244,7 @@ Another big mistake we has was that we were splitting train/val in a random way.
         )
 ```
 
-
-
+#### Adaptive Learning Rate
 Also, we've tried to apply an adaptative learning rate, so if the validation accuracy doesn't improve, the learning rate is reduced by a factor (0.1). With that, we allow the model to make  more precise adjustments, helping to find a deeper local minimum. We've called this function ```AdaptiveLearningRateScheduler``` and when we train the model, we pass this callback.
 The following graphic gives us a good model, having overfitting, but with train and validation accuracies higher. Remember, until know the validation accuracy reached not more than 0.5.
 
@@ -256,4 +259,15 @@ Now, we look the evolution of the learning rates:
 ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/learning_rate_lr_adapt.png)
 
 We start with a high learning rate: 0.01. And there are 4 times that val_accuracy is lower the previous one, so the learnig rate decreaes from 0.01 to 0.001, and 0.0001, until 1-06, which is the minimum lr.
+
+#### Accumulate Gradient 4 steps
+With the 10 selected artists we have 3880 photos, so we try to accumulate the gradient every 4 steps, meaning that the optimizer will update the parameters every 4 steps, using the mean of the acumulated gradients.
+
+In the last experiment, by adapting the learning rate, the validation accuracy reached 0.7851. Now we've arrived 0.8224, it's not a significant improvment, but it's a sign that we're improving our model (or the optimizer).
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/acc_grad_accum_4steps.png)
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/loss_grad_accum_4steps.png)
+
+
 
