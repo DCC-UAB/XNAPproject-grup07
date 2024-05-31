@@ -205,6 +205,12 @@ We have decided that working with 30 artists doesn't give us the results we expe
 ### Planning
 - Get the 10 artists with the most pictures -> Ariadna
 - Compare accuracy from classes -> Daria
+- Adaptative Learning Rate --> Mercè
+- Distribution for the classes in trin and validation set -> Marta
+- Improving the model by applying Normalizations and GlobalAveragePooling2D -> Marta
+- Frizing blocks -> Ariadna, Marta
+- Accumulate gradient -> Mercè
+- Function Resnet18 -> Mercè
 
 ### Results
 In the first task of separating the dataset into the top 10 artists, we had to consider the actual number of photos we had for each artist because the initial dataframe seemed to have more photos than we actually found. This resulted in the final set of photos being highly unbalanced. Therefore, we decided to select 10 artists with approximately the same number of photos. With these artists, we will conduct the initial tests.
@@ -245,6 +251,42 @@ Another big mistake we has was that we were splitting train/val in a random way.
             random_state=my_seed
         )
 ```
+#### Changing the model
+
+The new model includes a GlobalAveragePooling2D layer after the base_model, which converts the feature maps into a single vector by taking the average of each feature map. It also includes BatchNormalization layers after the dense layers to normalize the outputs, which helps speed up training and improve stability. Additionally, the model has an extra dense layer with 512 units and ReLU activation, followed by BatchNormalization and Dropout. The use of GlobalAveragePooling2D reduces the dimensionality of the feature maps, while the BatchNormalization and Dropout layers help prevent overfitting and improve generalization.
+
+
+```
+model_adam = Sequential()
+model_adam.add(base_model)
+model_adam.add(GlobalAveragePooling2D())
+model_adam.add(Dense(1024, activation='relu'))
+model_adam.add(BatchNormalization())
+model_adam.add(Dropout(0.5))
+model_adam.add(Dense(512, activation='relu', kernel_regularizer=l2(0.001)))
+model_adam.add(BatchNormalization())
+model_adam.add(Dropout(0.5))
+model_adam.add(Dense(num_classes, activation='softmax'))
+
+```
+
+We did only 5 epochs to see the general tendency. 
+
+We can see now that we have underfitting, as the Adam Train values are lower than the validations ones.
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/ACCURACITY%201.png)
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/LOSS%201.png)
+
+So, we change and we used a lower L2 regularization strength (0.0005) in the same Dense layer than previously and we also  freezed only the first 80 layers of the base_model and we leaved the remaining layers (from layer 80 onwards) unfrozen, so we th allowed them to be fine-tuned during training.
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/accuracity%205.png)
+
+![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/ouput/loss%205.png)
+
+
+We also tried reducing the dropout  rate to a lower value and changing the regularization to l1, but these adjustments resulted in worse performance.
+
 
 #### Adaptive Learning Rate
 Also, we've tried to apply an adaptative learning rate, so if the validation accuracy doesn't improve, the learning rate is reduced by a factor (0.1). With that, we allow the model to make  more precise adjustments, helping to find a deeper local minimum. We've called this function ```AdaptiveLearningRateScheduler``` and when we train the model, we pass this callback.
@@ -272,4 +314,9 @@ In the last experiment, by adapting the learning rate, the validation accuracy r
 ![Alt text](https://github.com/DCC-UAB/XNAPproject-grup07/blob/main/wandb/loss_grad_accum_4steps.png)
 
 #### Freezing by blocks
+
+
 After trying with freezing by blocks, these are the results we finally get:
+
+First, we trained the model for an initial number of epochs with all layers in the base model frozen, collecting training histories, with the purpose of freezing the layers of the base_model in blocks of a specified size (20) to allow for gradual fine-tuning.
+
