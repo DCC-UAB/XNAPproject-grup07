@@ -203,7 +203,7 @@ We have decided that working with 30 artists doesn't give us the results we expe
 - Compare the results from accuracy into different classes (artists).
 
 ### Planning
-- Get the 10 artists with the most pictures -> Ariadna
+- Get the 10 artists with the most pictures -> Daria
 - Compare accuracy from classes -> Ariadna
 
 ### Results
@@ -257,3 +257,4 @@ Now, we look the evolution of the learning rates:
 
 We start with a high learning rate: 0.01. And there are 4 times that val_accuracy is lower the previous one, so the learnig rate decreaes from 0.01 to 0.001, and 0.0001, until 1-06, which is the minimum lr.
 
+After trying with freezing by blocks, these are the results we finally get:
