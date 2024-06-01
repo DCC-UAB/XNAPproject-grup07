@@ -11,6 +11,9 @@ We will have the data outside the repository because of the size. Otherwise, thi
     - starting_point.ipynb
 - compositions
     - predictions_631 is a directory where we have the mosaics created from a model trained with a very few photos, 631.
+- models
+    A directory where we keep some models.
+    - histories, when we execute without wandb, we can keep the accuracies, losses and learning rates.
 - output \
     A folder where we keep the output such as the accuracies graphics and data augmentation.
 - wandb \
