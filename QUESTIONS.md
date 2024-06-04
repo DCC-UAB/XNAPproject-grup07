@@ -320,3 +320,14 @@ After trying with freezing by blocks, these are the results we finally get:
 
 First, we trained the model for an initial number of epochs with all layers in the base model frozen, collecting training histories, with the purpose of freezing the layers of the base_model in blocks of a specified size (20) to allow for gradual fine-tuning.
 
+
+## Week 5
+### Target goals
+- Try different model
+- Confusion matrix
+- Try with 10/20/30 pinters, explore the limits of the model
+- Add a graphis for test 
+- Explore the 10% that doesn't work
+- Explore fine-tunning (if we have time)
+
+### Planning
