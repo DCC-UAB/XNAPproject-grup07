@@ -1,0 +1,44 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.4",
+    "heartbeatAt": "2024-06-03T11:59:02.657298",
+    "startedAt": "2024-06-03T11:59:01.911450",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/DCC-UAB/XNAPproject-grup07.git",
+        "commit": "2032863cabed17a8d1deb182d281c44bdcc28a13"
+    },
+    "email": "Marta.Monso@autonoma.cat",
+    "root": "C:/Users/jesus/Desktop/Projecte/XNAPproject-grup07",
+    "host": "PORTATILHP",
+    "username": "Marta",
+    "executable": "c:\\Users\\jesus\\anaconda3\\python.exe",
+    "cpu_count": 10,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 1300.0,
+        "min": 0.0,
+        "max": 1300.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1300.0,
+            "min": 0.0,
+            "max": 1300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 476.02441024780273,
+            "used": 252.83328247070312
+        }
+    },
+    "memory": {
+        "total": 15.652114868164062
+    }
+}
